@@ -78,6 +78,16 @@ Things I'm planning to build with this data:
 
 ---
 
+## C# version
+
+I also remade the data generator in C# as a second learning exercise. Once I had the Python version working I wanted to see how the same logic translates. It uses the Bogus library which does the same job as Faker in Python.
+
+To run it, just double-click `run_csharp.bat`. You'll need the .NET 8 SDK installed first.
+
+The output is the same 5 CSV files — so it doesn't matter which script you run, Power BI setup is identical either way.
+
+---
+
 ## Notes
 
 - Every time you run the script you get the same data (seeds are fixed at 42) — useful if you want to share the project and have the same numbers
