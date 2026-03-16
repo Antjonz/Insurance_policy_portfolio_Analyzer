@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharpGenerator", "CSharpGenerator", "{B87B383B-3CF0-8253-2803-8BD4A7AF3841}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsurancePolicyGenerator", "CSharpGenerator\InsurancePolicyGenerator.csproj", "{338FA14C-F337-9AFF-29C9-F64009E6A7A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{338FA14C-F337-9AFF-29C9-F64009E6A7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338FA14C-F337-9AFF-29C9-F64009E6A7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338FA14C-F337-9AFF-29C9-F64009E6A7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338FA14C-F337-9AFF-29C9-F64009E6A7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{338FA14C-F337-9AFF-29C9-F64009E6A7A9} = {B87B383B-3CF0-8253-2803-8BD4A7AF3841}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30E6C1F8-D031-4A26-B51B-9880DE024D40}
+	EndGlobalSection
+EndGlobal

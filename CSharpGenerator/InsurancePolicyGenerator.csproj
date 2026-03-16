@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- Bogus is the C# equivalent of Python's Faker library -->
+  <!-- install it by running: dotnet add package Bogus -->
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="35.6.1" />
+  </ItemGroup>
+
+</Project>
