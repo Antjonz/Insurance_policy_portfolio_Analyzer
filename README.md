@@ -6,6 +6,8 @@ The idea is simple: run the script once, get a bunch of CSV files, load them int
 
 ---
 
+![Dashboard screenshot](Screenshots/01.png)
+
 ## What it generates
 
 The script creates 5 CSV files in a `/data` folder:
