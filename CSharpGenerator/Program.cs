@@ -13,6 +13,19 @@
 //   dotnet add package Bogus
 // -------------------------------------------------------------------------
 
+
+//These lines import namespaces from the Bogus library so you can use its types without writing full names 
+//every time.
+
+//using Bogus;
+//Makes core Bogus classes available, like Faker and Randomizer.
+
+//using Bogus.DataSets;
+//Makes Bogus data-specific helpers available, like Name, Address, Company, etc.
+
+//So instead of writing something long like Bogus.Faker or Bogus.DataSets.Name, 
+//your code can just use Faker and Name directly.
+
 using Bogus;
 using Bogus.DataSets;
 
@@ -24,7 +37,7 @@ Console.WriteLine("==================================================");
 // "nl" gives Dutch names, cities etc. - same as Faker("nl_NL") in Python
 var faker = new Faker("nl");
 
-// fix the seed so I get the same data every run
+// fix the seed so you get the same data every run
 // in Python I used random.seed(42) - this is the C# way
 Randomizer.Seed = new Random(42);
 
@@ -36,6 +49,7 @@ Directory.CreateDirectory("data");
 // these are just arrays I reuse in multiple places
 // -------------------------------------------------------------------------
 
+//[] creates an array in C# - similar to Python lists but fixed size and type
 var provinces = new[]
 {
     "Noord-Holland", "Zuid-Holland", "Utrecht", "Noord-Brabant",
@@ -70,6 +84,9 @@ var riskProfiles = new[] { "Low", "Low", "Medium", "Medium", "High" };
 
 // premium and coverage ranges per policy type
 // C# tuples are nice for this - cleaner than a 2D array
+//tuples are a simple way to group related values together without creating a full class or struct.
+//data in a tuple cannot be modified after it's created (immutable), 
+//which makes them great for fixed ranges like these.
 var premiumRanges = new Dictionary<string, (double Min, double Max)>
 {
     { "Auto",   (80,  250) },
@@ -78,6 +95,8 @@ var premiumRanges = new Dictionary<string, (double Min, double Max)>
     { "Health", (100, 200) }
 };
 
+//<> is the syntax for a generic type in C#. Dictionary<TKey, TValue> is a collection 
+//of key-value pairs where each key is unique and maps to a value.
 var coverageRanges = new Dictionary<string, (int Min, int Max)>
 {
     { "Auto",   (10_000,  100_000) },
@@ -93,7 +112,7 @@ var coverageRanges = new Dictionary<string, (int Min, int Max)>
 // -------------------------------------------------------------------------
 
 // C# doesn't have random.choice() built in like Python does
-// this is my workaround - just pick a random index
+// this is a workaround - just pick a random index
 T Pick<T>(T[] items) => items[faker.Random.Int(0, items.Length - 1)];
 
 // generate a random date between two DateTimes
@@ -116,6 +135,10 @@ string QuoteCsv(string value)
 
 // -------------------------------------------------------------------------
 // AGENTS
+//agents are the insurance company's employees who sell policies to customers. 
+//Each agent has a unique ID, a full name, a region they operate in, a branch office location, 
+//and years of experience in the industry. 
+//This section generates 25 agents with realistic Dutch names and attributes, and saves them to agents.csv.
 // -------------------------------------------------------------------------
 
 Console.WriteLine("Generating agents...");
